@@ -100,6 +100,14 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
         this.loading = true;
     }
 
+    /**
+     * resets the loading state, useful when {@link EndlessRecyclerViewScrollListener#onLoadMore(int, int, RecyclerView)}
+     * got canceled and needs to be called again.
+     */
+    public void resetLoadingState() {
+        this.loading = false;
+    }
+
     // Defines the process for actually loading more data based on page
     public abstract void onLoadMore(int page, int totalItemsCount, RecyclerView view);
 }

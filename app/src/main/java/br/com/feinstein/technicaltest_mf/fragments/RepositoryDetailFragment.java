@@ -22,6 +22,7 @@ import br.com.feinstein.technicaltest_mf.models.GithubPullRequest;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -94,15 +95,15 @@ public class RepositoryDetailFragment extends Fragment {
             return;
         }
 
-        if (!swipeRefreshLayout.isRefreshing()) {
-            swipeRefreshLayout.setRefreshing(true);
-        }
-
         compositeDisposable.add(
                 dataRepository.getGithubPullRequests(repositoryOwnerName, repositoryName)
                         .subscribeOn(Schedulers.io())
                         .timeout(1, TimeUnit.MINUTES)
                         .observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe((d) -> {
+                            if (!swipeRefreshLayout.isRefreshing()) {
+                                swipeRefreshLayout.setRefreshing(true);
+                            }})
                         .doOnError((throwable) -> {
                             Toast.makeText(getContext(),
                                     getString(R.string.network_error_message),
@@ -111,16 +112,17 @@ public class RepositoryDetailFragment extends Fragment {
                             //         getString(R.string.network_error_message),
                             //         Snackbar.LENGTH_LONG).show();
                         })
-                        .retry()
+                        .retryWhen(errors -> errors.flatMap(error -> Flowable.timer(30, TimeUnit.SECONDS)))
+                        .doFinally(() -> {
+                            if (swipeRefreshLayout.isRefreshing()) {
+                                swipeRefreshLayout.setRefreshing(false);
+                            }
+                        })
                         .subscribe(newPullRequests -> {
                             pullRequests.clear();
                             pullRequests.addAll(newPullRequests);
 
                             recyclerView.getAdapter().notifyDataSetChanged();
-
-                            if (swipeRefreshLayout.isRefreshing()) {
-                                swipeRefreshLayout.setRefreshing(false);
-                            }
                         })
         );
     }

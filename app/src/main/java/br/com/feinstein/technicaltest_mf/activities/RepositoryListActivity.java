@@ -20,8 +20,7 @@ import br.com.feinstein.technicaltest_mf.data.repositories.GithubDataRepository;
 import br.com.feinstein.technicaltest_mf.models.GithubRepository;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.Observable;
-import io.reactivex.Single;
+import io.reactivex.Flowable;
 import io.reactivex.SingleTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -35,8 +34,9 @@ public class RepositoryListActivity extends AppCompatActivity {
     private GithubDataRepository dataRepository;
     private boolean mTwoPane;
     private List<GithubRepository> repositories = new ArrayList<>();
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private CompositeDisposable compositeDisposable;
     private SingleTransformer<List<GithubRepository>, List<GithubRepository>> configurationTransformer;
+    private EndlessRecyclerViewScrollListener endlessScrollListener;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.repository_list) RecyclerView recyclerView;
@@ -57,26 +57,21 @@ public class RepositoryListActivity extends AppCompatActivity {
             mTwoPane = true;
         }
 
-        dataRepository = new GithubDataRepository(); // TODO: Inject with Dagger 2
-
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setOnRefreshListener(this::loadFirstItems);
 
+        dataRepository = new GithubDataRepository(); // TODO: Inject with Dagger 2
+        compositeDisposable = new CompositeDisposable();
         createConfigurationTransformer();
 
         setupRecyclerView();
         loadFirstItems();
     }
 
-    // @Override
-    // protected void onResume() {
-    //     super.onResume();
-    //     compositeDisposable = new CompositeDisposable();
-    // }
-
     @Override
     protected void onPause() {
         compositeDisposable.clear();
+        endlessScrollListener.resetLoadingState();
         super.onPause();
     }
 
@@ -92,9 +87,10 @@ public class RepositoryListActivity extends AppCompatActivity {
         GithubRepositoriesRecyclerViewAdapter adapter = new GithubRepositoriesRecyclerViewAdapter(this,
                 repositories, mTwoPane);
         recyclerView.setAdapter(adapter);
-        recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+        endlessScrollListener = new EndlessRecyclerViewScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                compositeDisposable.clear();
                 compositeDisposable.add(
                         dataRepository.getGithubRepositoriesFromPage(page + 1)
                                       .compose(configurationTransformer)
@@ -104,13 +100,15 @@ public class RepositoryListActivity extends AppCompatActivity {
                                       })
                 );
             }
-        });
+        };
+        recyclerView.addOnScrollListener(endlessScrollListener);
     }
 
     /**
      * Carrega os primeiros items da lista
      */
     private void loadFirstItems() {
+        compositeDisposable.clear();
         compositeDisposable.add(
                 dataRepository.getGithubRepositoriesFromPage(1)
                               .compose(configurationTransformer)
@@ -131,7 +129,6 @@ public class RepositoryListActivity extends AppCompatActivity {
                       .timeout(1, TimeUnit.MINUTES)
                       .observeOn(AndroidSchedulers.mainThread())
                       .doOnSubscribe((d) -> {
-                          compositeDisposable.clear();
                           if (!swipeRefreshLayout.isRefreshing()) {
                               swipeRefreshLayout.setRefreshing(true);
                           }})
@@ -143,7 +140,7 @@ public class RepositoryListActivity extends AppCompatActivity {
                           //         getString(R.string.network_error_message),
                           //         Snackbar.LENGTH_LONG).show();
                       })
-                      .retry()
+                      .retryWhen(errors -> errors.flatMap(error -> Flowable.timer(30, TimeUnit.SECONDS)))
                       .doFinally(() -> {
                           if (swipeRefreshLayout.isRefreshing()) {
                               swipeRefreshLayout.setRefreshing(false);

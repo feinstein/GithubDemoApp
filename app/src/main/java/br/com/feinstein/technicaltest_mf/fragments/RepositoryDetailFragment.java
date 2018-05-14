@@ -1,7 +1,6 @@
 package br.com.feinstein.technicaltest_mf.fragments;
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
@@ -17,12 +16,9 @@ import java.util.concurrent.TimeUnit;
 import br.com.feinstein.technicaltest_mf.R;
 import br.com.feinstein.technicaltest_mf.activities.RepositoryDetailActivity;
 import br.com.feinstein.technicaltest_mf.activities.RepositoryListActivity;
-import br.com.feinstein.technicaltest_mf.adapters.EndlessRecyclerViewScrollListener;
 import br.com.feinstein.technicaltest_mf.adapters.GithubPullRequestsRecyclerViewAdapter;
-import br.com.feinstein.technicaltest_mf.adapters.GithubRepositoriesRecyclerViewAdapter;
+import br.com.feinstein.technicaltest_mf.data.repositories.GithubDataRepository;
 import br.com.feinstein.technicaltest_mf.models.GithubPullRequest;
-import br.com.feinstein.technicaltest_mf.services.rest.GithubService;
-import br.com.feinstein.technicaltest_mf.services.rest.GithubServiceFactory;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -40,7 +36,7 @@ public class RepositoryDetailFragment extends Fragment {
     public static final String ARG_REPOSITORY_NAME = "repository_name";
     public static final String ARG_REPOSITORY_OWNER_NAME = "repository_owner_name";
 
-    private GithubService githubService;
+    private GithubDataRepository dataRepository;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private List<GithubPullRequest> pullRequests = new ArrayList<>();
     private String repositoryName;
@@ -67,8 +63,7 @@ public class RepositoryDetailFragment extends Fragment {
             repositoryOwnerName = getArguments().getString(ARG_REPOSITORY_OWNER_NAME);
         }
 
-        GithubServiceFactory githubServiceFactory = new GithubServiceFactory();
-        githubService = githubServiceFactory.createGithubService();
+        dataRepository = new GithubDataRepository(); // TODO: Inject with Dagger 2
     }
 
     @Override
@@ -104,7 +99,7 @@ public class RepositoryDetailFragment extends Fragment {
         }
 
         compositeDisposable.add(
-                githubService.getPullRequests(repositoryOwnerName, repositoryName)
+                dataRepository.getGithubPullRequests(repositoryOwnerName, repositoryName)
                         .subscribeOn(Schedulers.io())
                         .timeout(1, TimeUnit.MINUTES)
                         .observeOn(AndroidSchedulers.mainThread())

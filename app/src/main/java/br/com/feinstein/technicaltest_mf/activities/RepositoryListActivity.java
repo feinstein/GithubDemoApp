@@ -2,13 +2,11 @@ package br.com.feinstein.technicaltest_mf.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,14 +16,15 @@ import java.util.concurrent.TimeUnit;
 import br.com.feinstein.technicaltest_mf.R;
 import br.com.feinstein.technicaltest_mf.adapters.EndlessRecyclerViewScrollListener;
 import br.com.feinstein.technicaltest_mf.adapters.GithubRepositoriesRecyclerViewAdapter;
+import br.com.feinstein.technicaltest_mf.data.repositories.GithubDataRepository;
 import br.com.feinstein.technicaltest_mf.models.GithubRepository;
-import br.com.feinstein.technicaltest_mf.services.rest.GithubService;
-import br.com.feinstein.technicaltest_mf.services.rest.GithubServiceFactory;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.Single;
+import io.reactivex.SingleTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -33,10 +32,11 @@ import io.reactivex.schedulers.Schedulers;
  * Funciona tanto em smartphones quanto em tablets.
  */
 public class RepositoryListActivity extends AppCompatActivity {
-    private GithubService githubService;
+    private GithubDataRepository dataRepository;
     private boolean mTwoPane;
     private List<GithubRepository> repositories = new ArrayList<>();
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private SingleTransformer<List<GithubRepository>, List<GithubRepository>> configurationTransformer;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.repository_list) RecyclerView recyclerView;
@@ -57,18 +57,26 @@ public class RepositoryListActivity extends AppCompatActivity {
             mTwoPane = true;
         }
 
-        GithubServiceFactory githubServiceFactory = new GithubServiceFactory();
-        githubService = githubServiceFactory.createGithubService();
+        dataRepository = new GithubDataRepository(); // TODO: Inject with Dagger 2
 
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setOnRefreshListener(this::loadFirstItems);
 
+        createConfigurationTransformer();
+
         setupRecyclerView();
+        loadFirstItems();
     }
+
+    // @Override
+    // protected void onResume() {
+    //     super.onResume();
+    //     compositeDisposable = new CompositeDisposable();
+    // }
 
     @Override
     protected void onPause() {
-        compositeDisposable.dispose();
+        compositeDisposable.clear();
         super.onPause();
     }
 
@@ -87,74 +95,59 @@ public class RepositoryListActivity extends AppCompatActivity {
         recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                loadItemsPage(page, (size) -> adapter.notifyItemRangeInserted(totalItemsCount, size));
+                compositeDisposable.add(
+                        dataRepository.getGithubRepositoriesFromPage(page + 1)
+                                      .compose(configurationTransformer)
+                                      .subscribe(newRepositories -> {
+                                          repositories.addAll(newRepositories);
+                                          adapter.notifyItemRangeInserted(totalItemsCount, newRepositories.size());
+                                      })
+                );
             }
         });
-
-        loadFirstItems();
     }
 
     /**
      * Carrega os primeiros items da lista
      */
     private void loadFirstItems() {
-            loadItemsPage(1, (size) -> recyclerView.getAdapter().notifyDataSetChanged());
+        compositeDisposable.add(
+                dataRepository.getGithubRepositoriesFromPage(1)
+                              .compose(configurationTransformer)
+                              .subscribe((newRepositories) -> {
+                                  repositories.clear();
+                                  repositories.addAll(newRepositories);
+                                  recyclerView.getAdapter().notifyDataSetChanged();
+                              }));
     }
 
     /**
-     * Carrega a pagina de repositorios do Github.
-     *
-     * @param page numero da pagina
-     * @param notification notificacao a ser executada no final, para que o {@link RecyclerView}
-     *                     possa ser atualizado na UI.
+     * Cria um {@link SingleTransformer} para funcionar com a UI, recebendo tratamentos de erro,
+     * indicadores de loading etc e armazena numa instancia dessa classe para ser reutilizado.
      */
-    private void loadItemsPage(int page, Consumer<Integer> notification) {
-        if (!swipeRefreshLayout.isRefreshing()) {
-            swipeRefreshLayout.setRefreshing(true);
-        }
-
-        compositeDisposable.add(
-                githubService.getRepositories(page)
-                        .subscribeOn(Schedulers.io())
-                        .timeout(1, TimeUnit.MINUTES)
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .doOnError((throwable) -> {
-                            Toast.makeText(RepositoryListActivity.this,
-                                    getString(R.string.network_error_message),
-                                    Toast.LENGTH_LONG).show();
-                            // Snackbar.make(coordinatorLayout,
-                            //         getString(R.string.network_error_message),
-                            //         Snackbar.LENGTH_LONG).show();
-                        })
-                        .retry()
-                        .doFinally(() -> {
-                            if (swipeRefreshLayout.isRefreshing()) {
-                                swipeRefreshLayout.setRefreshing(false);
-                            }
-                        })
-                        .subscribe(repositoriesResponse -> {
-                                    List<GithubRepository> newRepositories = repositoriesResponse.getItems();
-
-                            Log.d("ListActivity", "\nReceived Repos: " + newRepositories.size());
-
-                            Log.d("ListActivity", "\n==============START============");
-
-                            for (GithubRepository r : newRepositories) {
-                                Log.d("ListActivity", r.getName() + "\t" + r.getOwner().getUsername());
-                            }
-
-                                    repositories.addAll(newRepositories);
-
-                            Log.d("ListActivity", "\n==========================");
-                            Log.d("ListActivity", "\nAll Repos: " + repositories.size());
-                            for (GithubRepository r : repositories) {
-                                Log.d("ListActivity", r.getName() + "\t" + r.getOwner().getUsername());
-                            }
-                            Log.d("ListActivity", "\n============END==============");
-
-
-                            notification.accept(newRepositories.size());
-                                })
-        );
+    private void createConfigurationTransformer() {
+        configurationTransformer = (single) ->
+                single.subscribeOn(Schedulers.io())
+                      .timeout(1, TimeUnit.MINUTES)
+                      .observeOn(AndroidSchedulers.mainThread())
+                      .doOnSubscribe((d) -> {
+                          compositeDisposable.clear();
+                          if (!swipeRefreshLayout.isRefreshing()) {
+                              swipeRefreshLayout.setRefreshing(true);
+                          }})
+                      .doOnError((throwable) -> {
+                          Toast.makeText(RepositoryListActivity.this,
+                                  getString(R.string.network_error_message),
+                                  Toast.LENGTH_LONG).show();
+                          // Snackbar.make(coordinatorLayout,
+                          //         getString(R.string.network_error_message),
+                          //         Snackbar.LENGTH_LONG).show();
+                      })
+                      .retry()
+                      .doFinally(() -> {
+                          if (swipeRefreshLayout.isRefreshing()) {
+                              swipeRefreshLayout.setRefreshing(false);
+                          }
+                      });
     }
 }

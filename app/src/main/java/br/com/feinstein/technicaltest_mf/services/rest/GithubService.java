@@ -18,6 +18,6 @@ public interface GithubService {
     Single<GithubRepositoryResponse> getRepositories(@Query("page") int page);
 
     @GET("repos/{username}/{repository_name}/pulls")
-    Single<List<GithubPullRequest>> getPullRequests(@Path("username") String username,
+    Single<List<GithubPullRequest>> getPullRequests(@Path("username") String ownerName,
                                                     @Path("repository_name") String repositoryName);
 }

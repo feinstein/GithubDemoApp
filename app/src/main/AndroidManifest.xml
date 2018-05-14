@@ -16,7 +16,8 @@
         <activity
             android:name=".activities.RepositoryListActivity"
             android:label="@string/title_repositories"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

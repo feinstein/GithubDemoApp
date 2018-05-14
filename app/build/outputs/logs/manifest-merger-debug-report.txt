@@ -1,0 +1,180 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\270decbd0692e8328213cbfcc70ec21c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\c11cdd5471366903bc41e74d8d63db1a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\dc2f63d238812f635d47dc18d4d19ea6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6184733ced9ca8741e8479e525142492\AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\655d8faf797de2850263250c8789e94f\AndroidManifest.xml:15:1-21:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:2:1-14:12
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\threetenabp-1.1.0.aar\7723f761904a6a816a8217974120cbc8\AndroidManifest.xml:2:1-9:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37cf9c497172e2df30f79b5910031534\AndroidManifest.xml:2:1-11:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\0036970ae307e43c1ea51bade4083b09\AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8dfaf2c2aea0aee75106c368b885f0ae\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\61b6a63f50a05036699d07876217e51a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\fbfc5fc212a8d840d5d4b09c1d8f6d39\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\849d9eb11b0ab5aa9240232d2931cec3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\09f6dc44ee0c752460eae51cead06b26\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\318e26920c25ab669752b6d77ce6a682\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1f875ef6d29e7cc08358ee9d6f9093a3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\50676689fceafdfc6c9cff8da50a04af\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\1807435b3bc6e0512606bd0b9233568e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ced34ca1db8c83fb0541c68f8f2c90ba\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\47f193d6c3de180abb6936a76b775f9b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1d38250fcfca1678a84bab02daaa1bda\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\248bc1dfd47f4957a696aa2d9a665187\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8ee0dfd7725b190d2fcc7356a31f7659\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+	package
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:8:5-35:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:7:5-12:19
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\threetenabp-1.1.0.aar\7723f761904a6a816a8217974120cbc8\AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\threetenabp-1.1.0.aar\7723f761904a6a816a8217974120cbc8\AndroidManifest.xml:7:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37cf9c497172e2df30f79b5910031534\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37cf9c497172e2df30f79b5910031534\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8dfaf2c2aea0aee75106c368b885f0ae\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8dfaf2c2aea0aee75106c368b885f0ae\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:15:9-40
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:9:9-45
+activity#br.com.feinstein.technicaltest_mf.activities.RepositoryListActivity
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:16:9-25:20
+	android:label
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:18:13-55
+	android:theme
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:19:13-56
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:17:13-62
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:23:27-74
+activity#br.com.feinstein.technicaltest_mf.activities.RepositoryDetailActivity
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:26:9-34:20
+	android:parentActivityName
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:29:13-76
+	android:label
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:28:13-60
+	android:theme
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:30:13-56
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:27:13-64
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:31:13-33:103
+	android:value
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:33:17-100
+	android:name
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml:32:17-63
+uses-sdk
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\270decbd0692e8328213cbfcc70ec21c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\270decbd0692e8328213cbfcc70ec21c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\c11cdd5471366903bc41e74d8d63db1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\c11cdd5471366903bc41e74d8d63db1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\dc2f63d238812f635d47dc18d4d19ea6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\dc2f63d238812f635d47dc18d4d19ea6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6184733ced9ca8741e8479e525142492\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\6184733ced9ca8741e8479e525142492\AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\655d8faf797de2850263250c8789e94f\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.2.aar\655d8faf797de2850263250c8789e94f\AndroidManifest.xml:19:5-43
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\threetenabp-1.1.0.aar\7723f761904a6a816a8217974120cbc8\AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\threetenabp-1.1.0.aar\7723f761904a6a816a8217974120cbc8\AndroidManifest.xml:5:5-44
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37cf9c497172e2df30f79b5910031534\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37cf9c497172e2df30f79b5910031534\AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\0036970ae307e43c1ea51bade4083b09\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\0036970ae307e43c1ea51bade4083b09\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8dfaf2c2aea0aee75106c368b885f0ae\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8dfaf2c2aea0aee75106c368b885f0ae\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\61b6a63f50a05036699d07876217e51a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\61b6a63f50a05036699d07876217e51a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\fbfc5fc212a8d840d5d4b09c1d8f6d39\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\fbfc5fc212a8d840d5d4b09c1d8f6d39\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\849d9eb11b0ab5aa9240232d2931cec3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\849d9eb11b0ab5aa9240232d2931cec3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\09f6dc44ee0c752460eae51cead06b26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\09f6dc44ee0c752460eae51cead06b26\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\318e26920c25ab669752b6d77ce6a682\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\318e26920c25ab669752b6d77ce6a682\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1f875ef6d29e7cc08358ee9d6f9093a3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1f875ef6d29e7cc08358ee9d6f9093a3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\50676689fceafdfc6c9cff8da50a04af\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\50676689fceafdfc6c9cff8da50a04af\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\1807435b3bc6e0512606bd0b9233568e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\1807435b3bc6e0512606bd0b9233568e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ced34ca1db8c83fb0541c68f8f2c90ba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ced34ca1db8c83fb0541c68f8f2c90ba\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\47f193d6c3de180abb6936a76b775f9b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\47f193d6c3de180abb6936a76b775f9b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1d38250fcfca1678a84bab02daaa1bda\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1d38250fcfca1678a84bab02daaa1bda\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\248bc1dfd47f4957a696aa2d9a665187\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\248bc1dfd47f4957a696aa2d9a665187\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8ee0dfd7725b190d2fcc7356a31f7659\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8ee0dfd7725b190d2fcc7356a31f7659\AndroidManifest.xml:20:5-44
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		ADDED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Projetos\Pagos\SuperRevendedores\TesteTecnico\desafio-android-super-revendedores\app\src\main\AndroidManifest.xml
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Michel Feinstein\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\fe489f50ee270b1198000bb6e2fdc5fe\AndroidManifest.xml:9:13-64

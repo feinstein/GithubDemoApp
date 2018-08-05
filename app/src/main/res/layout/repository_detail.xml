@@ -5,8 +5,8 @@
     android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="br.com.feinstein.technicaltest_mf.RepositoryListFragment"
-    tools:context=".activities.RepositoryListActivity">
+    android:name="br.com.feinstein.githubapp.RepositoryListFragment"
+    tools:context="br.com.feinstein.githubapp.activities.RepositoryListActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pull_requests_list"

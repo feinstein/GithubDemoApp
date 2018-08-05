@@ -10,7 +10,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".activities.RepositoryListActivity">
+    tools:context="br.com.feinstein.githubapp.activities.RepositoryListActivity">
 
     <!-- This layout is a two-pane layout for the Repositories master/detail flow. -->
 

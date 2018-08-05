@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TechnicalTest_MF</string>
+    <string name="app_name">GithubApp</string>
     <string name="title_repository_detail">Pull Requests</string>
     <string name="title_repositories">Repositórios Java</string>
     <string name="network_error_message">Erro ao carregar os repositórios, verrifique seu sinal de Internet</string>
